@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html, body, #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: #F8FAF8;
+    color: #1a1a1a;
+  }
+}
+
+@layer components {
+  .metric-card {
+    @apply bg-white rounded-2xl p-6 border border-gray-100 shadow-sm;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06), 0 4px 20px rgba(0, 77, 44, 0.04);
+  }
+
+  .label-tag {
+    @apply text-[10px] uppercase tracking-widest font-semibold text-gray-400;
+    letter-spacing: 0.1em;
+  }
+
+  .mono-num {
+    @apply font-mono;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-secondary font-bold rounded-full px-6 py-3 text-sm tracking-wide;
+    @apply hover:brightness-105 active:scale-95 transition-all duration-150;
+  }
+
+  .live-dot {
+    @apply w-2 h-2 rounded-full bg-primary inline-block;
+    animation: pulse-dot 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+  }
+
+  .equation-display {
+    @apply font-mono text-sm text-secondary/70 bg-secondary/5 rounded-lg px-3 py-1.5 inline-block;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .text-gradient-green {
+    background: linear-gradient(135deg, #00D154 0%, #004D2C 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+/* Pulse ring animation for the live dot */
+@keyframes pulse-ring {
+  0% { transform: scale(0.8); opacity: 0.8; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+
+.live-dot-ring::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #00D154;
+  animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Chart.js overrides */
+.chart-container {
+  position: relative;
+  width: 100%;
+}
+
+/* Drop zone styles */
+.drop-zone {
+  border: 1.5px dashed rgba(0, 209, 84, 0.4);
+  transition: all 0.2s ease;
+}
+
+.drop-zone:hover,
+.drop-zone.drag-over {
+  border-color: #00D154;
+  background: rgba(0, 209, 84, 0.06);
+}
+
+/* Progress bar animation */
+@keyframes progress-fill {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+.progress-bar-fill {
+  animation: progress-fill 4s linear forwards;
+}
+
+/* Checklist item animation */
+@keyframes item-appear {
+  from { opacity: 0; transform: translateX(-8px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Medical grid background */
+.medical-grid {
+  background-image:
+    linear-gradient(rgba(0, 209, 84, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 209, 84, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Scan line effect */
+@keyframes scan-line {
+  0% { top: 0%; }
+  100% { top: 100%; }
+}
+
+/* Risk gauge gradient */
+.gauge-gradient {
+  background: linear-gradient(90deg, #00D154 0%, #FFD700 50%, #FF9A86 100%);
+}
+
+/* Number jitter transition */
+.jitter-num {
+  transition: all 0.15s ease;
+  display: inline-block;
+}
+
+/* Narrative card glow */
+.narrative-glow {
+  box-shadow: 0 0 0 1px rgba(0, 209, 84, 0.15), 0 8px 32px rgba(0, 77, 44, 0.08);
+}
+
+/* Page transition */
+.page-enter {
+  animation: fade-in 0.4s ease-out;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Confidence interval band */
+.ci-band {
+  background: rgba(0, 209, 84, 0.08);
+  border-top: 1px solid rgba(0, 209, 84, 0.2);
+  border-bottom: 1px solid rgba(0, 209, 84, 0.2);
+}

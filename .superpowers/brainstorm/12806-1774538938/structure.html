@@ -1,0 +1,83 @@
+<h2>How should the experience be structured after upload?</h2>
+<p class="subtitle">Same content, three different shapes. Which one flows best?</p>
+
+<div class="options">
+
+  <div class="option" data-choice="threeact" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>🎬 Three-Act Journey</h3>
+      <p style="font-size:12px;color:#888;margin-bottom:10px;">Three full screens, each with one clear purpose</p>
+
+      <div style="display:flex;gap:8px;margin-bottom:10px;">
+        <div style="flex:1;background:#004D2C;color:white;border-radius:8px;padding:10px;font-size:11px;text-align:center;">
+          <div style="font-size:18px;margin-bottom:4px;">🔍</div>
+          <strong>Act 1</strong><br>
+          "Here's what I found"<br>
+          <span style="opacity:0.7;font-size:10px;">Vita diagnoses your top 3 risks, ranked by severity. Clinical findings with real model names.</span>
+        </div>
+        <div style="flex:1;background:#004D2C;color:white;border-radius:8px;padding:10px;font-size:11px;text-align:center;">
+          <div style="font-size:18px;margin-bottom:4px;">📈</div>
+          <strong>Act 2</strong><br>
+          "Here's your future"<br>
+          <span style="opacity:0.7;font-size:10px;">The simulator. Two paths side by side — do nothing vs. make one change. Watch the curves diverge.</span>
+        </div>
+        <div style="flex:1;background:#00D154;color:#004D2C;border-radius:8px;padding:10px;font-size:11px;text-align:center;">
+          <div style="font-size:18px;margin-bottom:4px;">✅</div>
+          <strong>Act 3</strong><br>
+          "Here's your plan"<br>
+          <span style="opacity:0.7;font-size:10px;">One specific weekly goal from Vita. Evidence for why this lever matters most. Option to set a reminder.</span>
+        </div>
+      </div>
+
+      <div style="padding:8px 12px;background:#f0fdf4;border-radius:8px;font-size:12px;color:#166534;">
+        ✦ Cleanest demo to present &nbsp;·&nbsp; Each screen has emotional beat &nbsp;·&nbsp; Judges follow a story
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="guided" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>🧭 Vita-Guided Tour</h3>
+      <p style="font-size:12px;color:#888;margin-bottom:10px;">One dashboard, Vita walks you through it step by step</p>
+
+      <div style="background:#f8faf8;border-radius:10px;padding:12px;font-size:12px;line-height:1.8;">
+        Dashboard loads → Vita highlights the #1 problem with a spotlight effect<br>
+        → Speech bubble: <em>"Let's start here — your HRV stress index"</em><br>
+        → Click "Tell me more" → panel expands with clinical detail + simulator<br>
+        → Vita moves to next finding: <em>"Now look at this..."</em><br>
+        → User can explore freely or follow Vita's guided path<br>
+        → Ends with a "Your action plan" section at the bottom
+      </div>
+
+      <div style="margin-top:10px;padding:8px 12px;background:#f0fdf4;border-radius:8px;font-size:12px;color:#166534;">
+        ✦ Feels like a tour guide &nbsp;·&nbsp; User stays on one screen &nbsp;·&nbsp; Familiar dashboard feel
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="report" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>📋 The Health Report</h3>
+      <p style="font-size:12px;color:#888;margin-bottom:10px;">Long-scroll single page — like a real clinical report</p>
+
+      <div style="background:#f8faf8;border-radius:10px;padding:12px;font-size:12px;line-height:1.8;">
+        Top: Vita's opening summary paragraph (warm, encouraging)<br>
+        Section 1: Clinical Findings — ranked risk factors with severity badges<br>
+        Section 2: What This Means Long-Term — simulator embedded inline<br>
+        Section 3: Model Evidence — equations, confidence intervals, feature weights<br>
+        Section 4: Your Action Plan — specific weekly goals, expected outcomes<br>
+        Footer: "Share this report" / "Re-scan in 2 weeks"
+      </div>
+
+      <div style="margin-top:10px;padding:8px 12px;background:#f0fdf4;border-radius:8px;font-size:12px;color:#166534;">
+        ✦ Most technically impressive visually &nbsp;·&nbsp; Shareable &nbsp;·&nbsp; Feels like a real medical doc
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<p style="margin-top:20px;font-size:13px;color:#888;text-align:center;">Pick what feels right and tell me in the chat.</p>
